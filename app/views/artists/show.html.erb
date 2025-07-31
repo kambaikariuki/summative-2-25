@@ -138,7 +138,7 @@
     <%= link_to "Edit", edit_artist_path(@artist), class:"btn btn-primary" %> |
   <% end %>  
   <%= link_to "Back to artists", artists_path, class: "btn btn-secondary" %>
-  <% if current_user.admin?%>
+  <% if current_user&.admin?%>
     <%= button_to "Destroy this artist", @artist, method: :delete %>
   <% end %>
 </div>

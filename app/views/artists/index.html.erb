@@ -18,6 +18,6 @@
     <br>
   <% end %>
 </div>
-<% if current_user.admin?%>
+<% if current_user&.admin?%>
   <%= link_to "New artist", new_artist_path %>
 <%end%>
