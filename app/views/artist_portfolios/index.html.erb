@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Artist portfolios" %>
+
+<h1>Artist portfolios</h1>
+
+<div id="artist_portfolios">
+  <% @artist_portfolios.each do |artist_portfolio| %>
+    <%= render artist_portfolio %>
+    <p>
+      <%= link_to "Show this artist portfolio", artist_portfolio %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New artist portfolio", new_artist_portfolio_path %>

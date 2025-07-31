@@ -1,0 +1,40 @@
+<footer class="bg-dark text-light py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <h5>About Us</h5>
+                <p>You're passionate about the arts, and so are we!</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <%= link_to "Home", root_path, class:"text-light"%>
+                    </li>
+                    <li>
+                        <%= link_to "Artists", artists_path, class:"text-light"%>
+                    </li>
+                    <li>
+                        <%= link_to "Artworks", artworks_path, class:"text-light"%>
+                    </li>
+                    <li>
+                        <%= link_to "My Profile", edit_user_registration_path, class:"text-light"%>
+                    </li>
+                </ul>
+            </div>
+            <%# <div class="col-md-4 mb-3">
+                <h5>Connect With Us</h5>
+                <div class="d-flex gap-3">
+                    <a href="#" class="text-light"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-light"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-light"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="text-light"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div> %>
+        </div>
+        <hr class="bg-light">
+        <div class="text-center">
+            <p class="mb-0">&copy; 2025 Digital Artists Directory. All rights reserved.</p>
+        </div>
+    </div>
+</footer>

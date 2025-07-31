@@ -1,0 +1,150 @@
+<link rel="stylesheet" href="https://rawgit.com/LeshikJanz/libraries/master/Bootstrap/baguetteBox.min.css">
+<style>
+  body {
+    min-height: 100vh;
+    font: normal 16px sans-serif;
+    padding: 40px 0;
+  }
+
+  .container.gallery-container {
+      background-color: #fff;
+      color: #35373a;
+      min-height: 100vh;
+      padding: 10px 20px;
+  }
+
+  .gallery-container h1 {
+      text-align: center;
+      margin-top: 50px;
+      font-family: 'Droid Sans', sans-serif;
+      font-weight: bold;
+  }
+
+  .gallery-container p.page-description {
+      text-align: center;
+      margin: 25px auto;
+      font-size: 18px;
+      color: #999;
+  }
+
+  .tz-gallery {
+      padding: 40px;
+  }
+
+  /* Override bootstrap column paddings */
+  .tz-gallery .row>div {
+      padding: 2px;
+  }
+
+  .tz-gallery .lightbox img {
+      width: 100%;
+      border-radius: 0;
+      position: relative;
+  }
+
+  .tz-gallery .lightbox:before {
+      top: 50%;
+      left: 50%;
+      margin-top: -13px;
+      margin-left: -13px;
+      opacity: 0;
+      color: #fff;
+      font-size: 26px;
+      font-family: 'Glyphicons Halflings';
+      content: '\e003';
+      pointer-events: none;
+      z-index: 9000;
+      transition: 0.4s;
+  }
+
+
+  .tz-gallery .lightbox:after {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      background-color: rgba(46, 132, 206, 0.7);
+      content: '';
+      transition: 0.4s;
+  }
+
+  .tz-gallery .lightbox:hover:after,
+  .tz-gallery .lightbox:hover:before {
+      opacity: 1;
+  }
+
+  .baguetteBox-button {
+      background-color: transparent !important;
+  }
+
+  @media(max-width: 768px) {
+      body {
+          padding: 0;
+      }
+  }
+</style>
+
+<p style="color: green"><%= notice %></p>
+
+<div class="container mt-1">
+  <div class="row">
+    <div class="col text-center">
+      <div class="avatar mx-auto mb-3">
+        <img src="https://images.unsplash.com/photo-1673379324645-21a670fc74c8?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cHJvZmlsZSUyMHBpYyUyMGljb258ZW58MHx8MHx8fDA%3D" class="img-fluid" alt="User Avatar">
+      </div>
+      <h3><%= @artist.user.first_name + " " + @artist.user.last_name%></h3>
+      <p>Email: <%= @artist.user.email%></p>
+      <p><%= @artist.bio%></p>
+    </div>
+  </div>
+</div>
+
+<div class="container gallery-container">
+
+    <h1><%= @artist.user.first_name + " " + @artist.user.last_name + "'s Gallery"%></h1>
+
+      <p class="page-description text-center">Find all the beautiful artworks and pieces from <%= @artist.user.first_name + " " + @artist.user.last_name %></p>
+
+    <div class="tz-gallery">
+    <% if current_user %>
+        <%= link_to "New artwork", new_artwork_path, class: "btn btn-outline-secondary" %>
+    <% end %>
+        <div class="row">
+          <% @artist.artworks.each do |artwork| %>
+            <% artwork.images.each do |image| %>
+            <div class="col-sm-12 col-md-4">
+              <%= link_to url_for(image), data: { lightbox: "artwork-group", title: artwork.description } do %>
+                <%= image_tag url_for(image), alt: artwork.description, class: "img-thumbnail" %>
+              <% end %>
+            </div>
+            <% end %>
+          <% end %>
+          </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+
+<script>
+    baguetteBox.run('.tz-gallery');
+</script>
+<br>
+
+<div>
+  <% if current_user == @artist.user%>
+    <%= link_to "Edit", edit_artist_path(@artist), class:"btn btn-primary" %> |
+  <% end %>  
+  <%= link_to "Back to artists", artists_path, class: "btn btn-secondary" %>
+  <% if current_user.admin?%>
+    <%= button_to "Destroy this artist", @artist, method: :delete %>
+  <% end %>
+</div>
+<br>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+
+<script>
+    baguetteBox.run('.tz-gallery');
+</script>

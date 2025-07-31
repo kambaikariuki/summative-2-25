@@ -1,0 +1,11 @@
+<% content_for :title, "New artist profile" %>
+
+<h1>New artist profile</h1>
+
+<%= render "form", artist_profile: @artist_profile %>
+
+<br>
+
+<div>
+  <%= link_to "Back to artist profiles", artist_profiles_path %>
+</div>

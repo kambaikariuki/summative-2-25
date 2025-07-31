@@ -1,0 +1,2 @@
+module ArtistPortfoliosHelper
+end

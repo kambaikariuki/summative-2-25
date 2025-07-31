@@ -1,0 +1,117 @@
+<!-- Hero Section -->
+<section id="home" class="hero-section d-flex align-items-center">
+    <div class="container text-center">
+        <h1 class="display-1 mb-4">Welcome to the Digital Arts Directory</h1>
+        <p class="lead mb-4">Here you can find all your favorite artists, view your favorite artworks at the click of a button, and where you can find the artworks. Have a look!</p>
+        <div class="d-flex justify-content-center gap-3">
+            <%= link_to "Straight to Artworks", artworks_path, class: "btn btn-primary btn-lg"%>
+            <%= link_to "View Our Artists", artists_path, class: "btn btn-outline-light btn-lg"%>
+        </div>
+    </div>
+</section>
+
+<!-- About -->
+<section id="about" class="py-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <img src="https://images.unsplash.com/photo-1515405295579-ba7b45403062?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YXJ0JTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D" alt="About Us" class="img-fluid rounded">
+            </div>
+            <div class="col-md-6">
+                <h2>About Us</h2>
+                <p class="lead">We're passionate about the arts</p>
+                <p>We love the arts and we know you do too, so we brought together all your favorite artists and artworks together in one place just for you. Sketches, paintings, murals, sculptures - you know it, find them here.</p>
+                <%= link_to "Learn More About Us", about_index_path, class: "btn btn-primary"%>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features -->
+<section id="features" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">What can you find here?</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="text-center">
+                    <h3>Artists</h3>
+                    <p>Your favorite artists, who they are, why they are and how they are. Find out more on how they perfected their crafts by reading more about them on their profile</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="text-center">
+                    <h3>Artworks</h3>
+                    <p>View your favorite paintings, sculptures, drawings and murals from various artists.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="text-center">
+                    <h3>Artist Portfolios</h3>
+                    <p>Find all of your favorite artists' works all in one place; view, appreciate their works and compare them with those you haven't seen yet.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Artists -->
+<section id="testimonials" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Meet some of our featured artists</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <img src="https://randomuser.me/api/portraits/men/64.jpg" class="testimonial-img mb-3" alt="Client 1">
+                        <p class="card-text">"Outstanding service! The team went above and beyond our expectations."</p>
+                        <h5 class="card-title">Artist 1</h5>
+                        <p class="card-subtitle text-muted">Painter, sculpturer and potter</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <img src="https://randomuser.me/api/portraits/men/64.jpg" class="testimonial-img mb-3" alt="Client 1">
+                        <p class="card-text">"Outstanding service! The team went above and beyond our expectations."</p>
+                        <h5 class="card-title">Artist 1</h5>
+                        <p class="card-subtitle text-muted">Painter, sculpturer and potter</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <img src="https://randomuser.me/api/portraits/men/64.jpg" class="testimonial-img mb-3" alt="Client 1">
+                        <p class="card-text">"Outstanding service! The team went above and beyond our expectations."</p>
+                        <h5 class="card-title">Artist 1</h5>
+                        <p class="card-subtitle text-muted">Painter, sculpturer and potter</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Have any questions or ideas? Get in touch with us</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <form>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Your Name">
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" class="form-control" placeholder="Your Email">
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" rows="5" placeholder="Your Message"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

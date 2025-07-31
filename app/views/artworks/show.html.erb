@@ -1,0 +1,12 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @artwork %>
+
+<div>
+  <%= link_to "Back to artworks", artworks_path %>
+  <% if current_user&.admin %>
+    <%= link_to "Edit this artwork", edit_artwork_path(@artwork) %> |
+
+    <%= button_to "Destroy this artwork", @artwork, method: :delete %>
+  <% end %>
+</div>
