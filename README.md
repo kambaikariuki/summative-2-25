@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
+This README describes what you need to do to get this app running locally:
 Things you may want to cover:
 
-* Ruby version
+* Clone this repository onto your local machine
 
-* System dependencies
+* Ensure you have Ruby, Rails and MySQL installed
 
-* Configuration
+* Cd into the directory and run `bundle install` to get the gems required installed.
 
-* Database creation
+* Run `rails db:reset` and `rails db:migrate` to set up your database.
 
-* Database initialization
+* Run `bin/dev` or `rails server` which will have the application running on localhost:3000
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Open up your web browser and navigate to localhost:3000/ to access the application.
