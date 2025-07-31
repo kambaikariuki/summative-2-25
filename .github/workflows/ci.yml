@@ -55,6 +55,27 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.0
+        ports: [3306:3306]
+        env:
+          MYSQL_ROOT_PASSWORD: password
+          MYSQL_DATABASE: test_db
+        options: >-
+          --health-cmd="mysqladmin ping --silent"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
+
+    env:
+      RAILS_ENV: test
+      MYSQL_HOST: 127.0.0.1
+      MYSQL_PORT: 3306
+      MYSQL_USERNAME: root
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: test_db
+
 
     # services:
     #  redis:
@@ -74,6 +95,10 @@ jobs:
         with:
           ruby-version: .ruby-version
           bundler-cache: true
+      - name: Setup database
+        run: |
+          cp config/database.ci.yml config/database.yml
+          bundle exec rails db:create db:schema:load
 
       - name: Run tests
         env:

@@ -1,6 +1,6 @@
 class ArtistPortfoliosController < ApplicationController
   before_action :set_artist_portfolio, only: %i[ show edit update destroy ]
-  before_action :check_if_admin, only: [:edit, :destroy, :new, :create, :update, :destroy]
+  before_action :check_if_admin, only: [ :edit, :destroy, :new, :create, :update, :destroy ]
   skip_before_action :authenticate_user!
 
   # GET /artist_portfolios or /artist_portfolios.json

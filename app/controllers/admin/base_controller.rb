@@ -3,6 +3,5 @@ module Admin
     before_action :check_if_admin
 
     private
-
   end
 end
